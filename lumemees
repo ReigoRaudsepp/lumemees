@@ -1,0 +1,26 @@
+# Reigo Raudsepp
+
+import pygame
+
+pygame.init()
+
+screen=pygame.display.set_mode([300,300])  # ekraani suuruse muutmine
+pygame.display.set_caption("Lumemees - Reigo Raudsepp") # aknale nime andmine
+screen.fill([0, 0, 0])  # tausta värvi muutmine
+
+pygame.draw.circle(screen, [255, 255, 255], [150, 80], 35, 0) # pea
+pygame.draw.circle(screen, [255, 255, 255], [150, 145], 50, 0) # keha 
+pygame.draw.circle(screen, [255, 255, 255], [150, 220], 60, 0) # jalad
+pygame.draw.circle(screen, [0, 0, 0], [140, 80], 5, 0) # esimene silm
+pygame.draw.circle(screen, [0, 0, 0], [160, 80], 5, 0) # teine silm
+pygame.draw.polygon(screen, [255, 102, 0], [[150, 105], [145, 90], [155, 90]])  # nina
+
+pygame.display.flip()
+
+run = True  # loop, et ekraan jääks püsima
+while run:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            run =False
+
+pygame.quit()
